@@ -1,4 +1,8 @@
 # Enter your code here
+'''
+Docstring for camel
+My code ignores all numerical characters
+'''
 def main():
     output_name = ""
     input_name = input("Enter your name in camelCase:")
