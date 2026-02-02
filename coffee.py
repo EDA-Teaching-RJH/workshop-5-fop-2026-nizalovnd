@@ -36,8 +36,39 @@ def dispense_product(total_inserted):
     elif total_inserted > coffee_price:
         print(f"The change due is {total_inserted - coffee_price}p")
         print("Enjoy your coffee and don't forget your change!")
+        calculate_change(total_inserted - coffee_price)
 
 
+def calculate_change(amount):
+    coin_list = []
+    while amount > 0:
+        while True:
+            if amount - 50 >= 0:
+                amount = amount - 50
+                coin_list.append(50)
+            else:
+                break
+        while True:
+            if amount - 20 >= 0:
+                amount = amount - 20
+                coin_list.append(20)
+            else:
+                break
+        while True:
+            if amount - 10 >= 0:
+                amount = amount - 10
+                coin_list.append(10)
+            else:
+                break
+        while True:
+            if amount - 5 >= 0:
+                amount = amount - 5
+                coin_list.append(5)
+            else:
+                break
+        
+    print(f"Returning: {', '.join(str(l)+"p" for l in coin_list)}")   
+        
 
 
 def main():
