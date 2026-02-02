@@ -1,5 +1,6 @@
 #Your code goes here
 coffee_price = 75
+accepted_coins = [ "50p","20p","10p" ,"5p"]
 
 def main():
     print("The price of the cofee is 75p!")
@@ -8,6 +9,9 @@ def main():
     while inserted_money < coffee_price:
         print(f"You need to insert {coffee_price - inserted_money}p more")
         coin = input("Insert a coin")
+        if coin not in accepted_coins:
+            print("Invalid coin denumeration used. Collect rejected coin")
+            continue
         coin_val = ""
         for l in coin:
             if l.isnumeric():
